@@ -47,8 +47,13 @@ export const App = () => {
 						{steps.map((e, i) => {
 							return (
 								<li
-									className={styles['steps-item'] + 
-										(activeIndex === i ? + ' ' + styles.active  :  + ' ' + styles.done)
+									className={
+										styles['steps-item'] +
+										(activeIndex === i
+											? ' ' + styles.active
+											: activeIndex > i
+												? ' ' + styles.done
+												: '')
 									}
 									key={e.id}
 								>
